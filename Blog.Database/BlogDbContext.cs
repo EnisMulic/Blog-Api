@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Blog.Database
 {
-    public class BlogDbContext : DbContext
+    public partial class BlogDbContext : DbContext
     {
         public BlogDbContext(DbContextOptions<BlogDbContext> options) : base(options)
         {
@@ -40,8 +40,10 @@ namespace Blog.Database
                 .WithMany(i => i.PostTags)
                 .HasForeignKey(i => i.TagId);
 
-            base.OnModelCreating(modelBuilder);
+            OnModelCreatingPartial(modelBuilder);
         }
+
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
         public override int SaveChanges()
         {
