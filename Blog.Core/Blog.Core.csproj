@@ -10,8 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Blog.Contracts\Blog.Contracts.csproj" />
-    <ProjectReference Include="..\Blog.Core\Blog.Core.csproj" />
-    <ProjectReference Include="..\Domain.Database\Blog.Database.csproj" />
+    <ProjectReference Include="..\Blog.Domain\Blog.Domain.csproj" />
   </ItemGroup>
 
 </Project>

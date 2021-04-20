@@ -1,7 +1,7 @@
 ﻿using Blog.Contracts;
 using Blog.Contracts.Responses;
+using Blog.Services;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -10,11 +10,19 @@ namespace Blog.Api.Controllers
     [ApiController]
     public class TagController : ControllerBase
     {
+        private readonly ITagService _service;
+
+        public TagController(ITagService service)
+        {
+            _service = service;
+        }
+
         [HttpGet, Route(ApiRoutes.Tags.Get)]
         [ProducesResponseType(typeof(TagResponse), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> GetAsync()
         {
-            throw new NotImplementedException();
+            var response = await _service.GetAsync();
+            return Ok(response);
         }
     }
 }
