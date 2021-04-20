@@ -3,7 +3,6 @@ using Blog.Contracts.Requests;
 using Blog.Contracts.Responses;
 using Blog.Services;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -44,7 +43,7 @@ namespace Blog.Api.Controllers
 
         [HttpPost, Route(ApiRoutes.Posts.Create)]
         [ProducesResponseType(typeof(PostResponse), (int)HttpStatusCode.OK)]
-        [ProducesErrorResponseType(typeof(ErrorResponse))]
+        [ProducesResponseType(typeof(ErrorResponse), (int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> CreateAsync(CreatePostRequest request)
         {
             var response = await _service.CreateAsync(request);
@@ -59,8 +58,8 @@ namespace Blog.Api.Controllers
 
         [HttpPut, Route(ApiRoutes.Posts.Update)]
         [ProducesResponseType(typeof(PostResponse), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ErrorResponse), (int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        [ProducesErrorResponseType(typeof(ErrorResponse))]
         public async Task<IActionResult> UpdateAsync(string slug, UpdatePostRequest request)
         {
             var response = await _service.UpdateAsync(slug, request);
