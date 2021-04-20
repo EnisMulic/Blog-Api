@@ -11,9 +11,9 @@ namespace Blog.Database
         {
         }
 
-        public DbSet<Post> Posts { get; }
-        public DbSet<Tag> Tags { get; }
-        public DbSet<PostTag> PostTags { get; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<PostTag> PostTags { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Post>()
