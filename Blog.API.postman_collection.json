@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "d2f7d3c8-11c0-4703-b711-6b02ccc37777",
+		"name": "Blog.API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Get Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/posts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"blogPost\": {\r\n    \"slug\": \"augmented-reality-ios-application\",\r\n    \"title\": \"Augmented Reality iOS Application\",\r\n    \"description\": \"Rubicon Software Development and Gazzda furniture are proud to launch an augmented reality app.\",\r\n    \"body\": \"The app is simple to use, and will help you decide on your best furniture fit.\",\r\n    \"tagList\": [\"iOS\", \"AR\"]\r\n   }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/posts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"blogPost\": {\r\n    \"title\": \"Augmented Reality iOS Application\",\r\n    \"description\": \"Rubicon Software Development and Gazzzda furniture are proud to launch an augmented reality app.\",\r\n    \"body\": \"The app is simple to use, and will help you decide on your best furniture fit.\"\r\n   }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/posts/augmented-reality-ios-application",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"posts",
+								"augmented-reality-ios-application"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post By Slug",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/posts/augmented-reality-ios-application",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"posts",
+								"augmented-reality-ios-application"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tags",
+			"item": [
+				{
+					"name": "Get Tags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://localhost:44396/api"
+		}
+	]
+}
