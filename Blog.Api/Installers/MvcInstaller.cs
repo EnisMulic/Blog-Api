@@ -24,6 +24,14 @@ namespace Blog.Api.Installers
                 configuration.RegisterValidatorsFromAssemblyContaining<Startup>());
 
             services.AddControllers();
+
+            services.AddCors(options =>
+                options.AddDefaultPolicy(builder =>
+                    builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                )
+            );
         }
     }
 }

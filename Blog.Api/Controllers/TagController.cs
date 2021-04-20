@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace Blog.Api.Controllers
 {
-    [ApiController]
-    public class TagController : ControllerBase
+    public class TagController : BaseController
     {
         private readonly ITagService _service;
 

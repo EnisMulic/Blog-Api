@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace Blog.Api.Controllers
 {
-    [ApiController]
-    public class PostController : ControllerBase
+    public class PostController : BaseController
     {
         private readonly IPostService _service;
 
