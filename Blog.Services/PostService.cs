@@ -78,7 +78,6 @@ namespace Blog.Services
             }
 
             post = _mapper.Map<Post>(request.BlogPost);
-            post.Slug = slug;
 
             await _context.AddAsync(post);
             await _context.SaveChangesAsync();
@@ -128,11 +127,6 @@ namespace Blog.Services
             _context.Posts.Update(post);
 
             _mapper.Map(request.BlogPost, post);
-
-            if(!string.IsNullOrEmpty(request.BlogPost.Title))
-            {
-                post.Slug = SlugHelper.GenerateSlug(request.BlogPost.Title);
-            }
 
             _context.Update(post);
             await _context.SaveChangesAsync();
