@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "d2f7d3c8-11c0-4703-b711-6b02ccc37777",
-		"name": "Blog.API",
+		"_postman_id": "f6388801-7d3f-4b59-8a7a-1e838ff29f08",
+		"name": "Blog.API Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -83,7 +83,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "{{url}}/posts/augmented-reality-ios-application",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"posts",
+								"augmented-reality-ios-application"
+							]
+						}
 					},
 					"response": []
 				},
@@ -115,7 +124,9 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				}
@@ -145,7 +156,7 @@
 	"variable": [
 		{
 			"key": "url",
-			"value": "https://localhost:44396/api"
+			"value": "localhost:44396/api"
 		}
 	]
 }
