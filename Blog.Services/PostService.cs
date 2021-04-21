@@ -33,16 +33,7 @@ namespace Blog.Services
 
             var list = await query.ToListAsync();
 
-            var response = new List<PostModel>();
-            foreach (var item in list)
-            {
-                var responseItem = _mapper.Map<PostModel>(item);
-                responseItem.TagList = item.PostTags
-                    .Select(i => i.Tag.Name)
-                    .ToList();
-
-                response.Add(responseItem);
-            }
+            var response = _mapper.Map<List<PostModel>>(list);
 
             return new PostsResponse
             {
@@ -63,9 +54,6 @@ namespace Blog.Services
             }
 
             var response = _mapper.Map<PostModel>(post);
-            response.TagList = post.PostTags
-                .Select(i => i.Tag.Name)
-                .ToList();
 
             return new PostResponse
             {
@@ -117,9 +105,6 @@ namespace Blog.Services
             await _context.SaveChangesAsync();
 
             var response = _mapper.Map<PostModel>(post);
-            response.TagList = post.PostTags
-                .Select(i => i.Tag.Name)
-                .ToList();
 
             return new PostResponse
             {
@@ -153,9 +138,6 @@ namespace Blog.Services
             await _context.SaveChangesAsync();
 
             var response = _mapper.Map<PostModel>(post);
-            response.TagList = post.PostTags
-                .Select(i => i.Tag.Name)
-                .ToList();
 
             return new PostResponse
             {
