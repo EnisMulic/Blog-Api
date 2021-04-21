@@ -2,7 +2,7 @@ version: '3'
 
 services:
   blog-sql:
-    image: mcr.microsoft.com/mssql/server:latest
+    image: microsoft/mssql-server-linux:latest
     volumes:
       - blog-sql-data:/var/opt/mssql/data
     restart: unless-stopped
@@ -26,9 +26,9 @@ services:
     networks:
       - blognet
 
-volumes:
-  blog-sql-data:
-      
 networks:
   blognet:
     driver: bridge
+
+volumes:
+  blog-sql-data:
