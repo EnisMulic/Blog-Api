@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Net.Mime;
 
 namespace Blog.Api.Controllers
 {
     [ApiController]
-    [Produces("application/json; charset=utf-8")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [Consumes(MediaTypeNames.Application.Json)]
     public class BaseController : ControllerBase
     {
     }
